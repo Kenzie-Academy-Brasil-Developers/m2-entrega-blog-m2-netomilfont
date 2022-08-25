@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/reset.css">
+  <link rel="stylesheet" href="src/styles/login.css">
   <title>m2-entrega-blog-m2</title>
 </head>
 <body>
-  
+  <main>
+    <div class="container">
+      <h2>Entrar</h2>
+      <input type="email" name="email" id="inputEmail" placeholder="Email">
+      <input type="password" name="senha" id="inputPass" placeholder="Senha">
+      <button type="submit">Entrar</button>
+    </div>
+    <div class="container">
+      <h2>Cadastro</h2>
+      <input type="text" placeholder="Nome do usuário">
+      <input type="email" name="email" id="emailRegist" placeholder="Email">
+      <label for="imageRegist">Foto de perfil</label>
+      <input type="file" name="image" id="imageRegist" accept="image/*">
+      <input type="password" name="senha" id="passRegist" placeholder="Senha">
+      <button type="submit">Cadastrar</button>
+    </div>
+  </main>
 </body>
 </html>
