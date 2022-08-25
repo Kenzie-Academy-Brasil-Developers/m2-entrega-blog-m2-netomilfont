@@ -13,9 +13,11 @@ export class ApiRequest {
             body: JSON.stringify(body)
         })
         .then(res => res.json())
-        .then(res => {
+        .then(res => { 
+            localStorage.setItem("@kenzieBlog:userId", res.userId)
             localStorage.setItem("@kenzieBlog:token", res.token)
-            localStorage.setItem("@kenzieBlog:User_id", res.user.id)
+            window.location.assign("src/pages/homePage.html")
+            return res
         })
         .catch(err => console.log(err))
 

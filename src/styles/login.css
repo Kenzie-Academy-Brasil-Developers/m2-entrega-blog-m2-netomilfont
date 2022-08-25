@@ -80,6 +80,7 @@ label {
     border-radius: 20px;
     background-color: var(--dark-purple);
     color: var(--white);
+    cursor: pointer;
 }
 
 
