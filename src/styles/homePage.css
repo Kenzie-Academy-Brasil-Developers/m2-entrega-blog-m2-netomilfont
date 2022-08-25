@@ -1,0 +1,161 @@
+*{
+    /* outline: 1px solid red; */
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #6495ED;
+    --roxoClaro: #5C5D8D;
+    --roxo: #454D6B;
+    --roxoEscuro: #363457;
+    --branco: #ECF0F1;
+    --preto: #030000;
+}
+
+header {
+    background-color: var(--azul);
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    width: 90%;
+    padding: 6px 0;
+}
+
+header > div > div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header > div > div > img {
+    width: 4rem;
+}
+
+header > div > div > h2 {
+    font-size: 1.2rem;
+    text-shadow: -1px -1px 0px var(--preto),
+                 -1px 1px 0px var(--preto),
+                  1px -1px 0px var(--preto),
+                  1px 0px 0px var(--preto);
+    color: #fff;
+}
+
+header > div > button {
+    padding: 3px 24px;
+    font-size: 1.2rem;
+    border-radius: 16px;
+    border: none;
+    background-color: var(--roxoClaro);
+    color: #ffffff;
+    font-weight: 500;   
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--roxoEscuro);
+    height: 1000px;
+}
+
+main > form {
+    width: 90%;
+    display: flex;
+}
+
+main > form > div {
+    width: 100%;
+    margin: 30px auto 50px;
+    background-color: var(--branco);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main > form > div > input {
+    width: 100%;
+    height: 5rem;
+    border-radius: 16px;
+    padding: 0 10px;
+    font-size: 1.2rem;
+    background-color: var(--branco);
+    color: var(--roxo);
+    border: none;
+}
+
+main > form > div > button {
+    padding: 3px 20px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    background-color: var(--roxoClaro);
+    color: #fff;
+    margin: 10px;
+}
+
+main > section > ul {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+main > section > ul > li {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--branco);
+    border-radius: 16px;
+    text-align: center;
+}
+
+main > section > ul > li > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+main > section > ul > li > div > img {
+    width: 5rem;
+}
+
+main > section > ul > li > div > h2 {
+    font-size: 1.2rem;
+}
+
+main > section > ul > li .postagem {
+    font-size: 0.8rem;
+    width: 86%;
+    text-align: start;
+}
+
+main > section > ul > li .data {
+    font-size: 0.8rem;
+}
+
+.container__botoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.container__botoes > button {
+    border: none;
+    width: 2.5rem;
+}
