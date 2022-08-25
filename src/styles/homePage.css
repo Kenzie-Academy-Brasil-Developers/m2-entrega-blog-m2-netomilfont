@@ -63,6 +63,7 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: var(--roxoEscuro);
+    height: 100vh;
 }
 
 main > form {

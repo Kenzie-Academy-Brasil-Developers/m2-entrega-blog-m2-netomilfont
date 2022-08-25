@@ -16,7 +16,7 @@ export class ApiRequest {
         .then(res => { 
             localStorage.setItem("@kenzieBlog:userId", res.userId)
             localStorage.setItem("@kenzieBlog:token", res.token)
-            window.location.assign("src/pages/homePage.html")
+
             return res
         })
         .catch(err => console.log(err))
@@ -27,12 +27,11 @@ export class ApiRequest {
     static async cadastro(data) {
         const cadUsuario = await fetch(`${ApiRequest.BASEURL}/users/register`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: ApiRequest.headers,
             body: JSON.stringify(data) 
         })
         .then(res => {
+            window.location.assign("./index.html")
             return res.json()
             })
         .catch(err => console.log(err))
