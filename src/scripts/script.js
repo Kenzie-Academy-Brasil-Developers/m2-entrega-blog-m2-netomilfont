@@ -6,14 +6,16 @@ export class ApiRequest {
     }
 
     static async cadastro(data) {
-        const cadUsuario = await fetch(`${this.url}/users/register`, {
+        const cadUsuario = await fetch(`${ApiRequest.url}/users/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(data) 
         })
-        .then(res => res.json())
+        .then(res => {
+            return res.json()
+            })
         .catch(err => console.log(err))
 
         return cadUsuario
