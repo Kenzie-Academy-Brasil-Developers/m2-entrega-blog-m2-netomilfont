@@ -1,10 +1,12 @@
 export class ApiRequest {
+    static url = "https://blog-m2.herokuapp.com"
+
     static async login() {
 
     }
 
     static async cadastro(data) {
-        const cadUsuario = await fetch("https://blog-m2.herokuapp.com", {
+        const cadUsuario = await fetch(`${this.url}/users/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
