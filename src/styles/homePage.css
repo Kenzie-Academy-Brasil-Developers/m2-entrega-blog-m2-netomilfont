@@ -63,7 +63,6 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: var(--roxoEscuro);
-    height: 1000px;
 }
 
 main > form {
@@ -158,4 +157,23 @@ main > section > ul > li .data {
 .container__botoes > button {
     border: none;
     width: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+    header > div {
+        width: 80%;
+    }
+
+    main > form > div {
+        width: 60%;
+    }
+    
+    main > section > ul {
+        width: 55%;
+    }
+
+    main > section > ul > li {
+        flex-direction: row;
+        min-height: 12rem;
+    }
 }

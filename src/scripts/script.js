@@ -24,8 +24,20 @@ export class ApiRequest {
         return userLogin
     }
 
-    static async cadastro() {
+    static async cadastro(data) {
+        const cadUsuario = await fetch(`${ApiRequest.BASEURL}/users/register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data) 
+        })
+        .then(res => {
+            return res.json()
+            })
+        .catch(err => console.log(err))
 
+        return cadUsuario
     }
 
     static async homePage() {
@@ -41,6 +53,6 @@ export class ApiRequest {
     }
 
     static async deletePost() {
-        
+
     }
 }
