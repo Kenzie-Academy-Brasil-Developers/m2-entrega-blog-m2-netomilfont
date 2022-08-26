@@ -1,12 +1,12 @@
 import { ApiRequest } from "./script.js";
 
 export class Postagens {
-    static  listarPosts(arr) {
+    static listarPosts(arr) {
         const ul = document.querySelector("ul")
+        const data = arr.data
 
-        arr.forEach((postagem) => {
+        data.forEach((postagem) => {
             const cardPost =  Postagens.criarCard(postagem)
-
             ul.append(cardPost)
         });
     }
@@ -62,21 +62,26 @@ export class Postagens {
 
         return li
     }
+
+
+    static newPost () {
+
+        const inputPost = document.querySelector(".inputPostagem")
+        const buttonPost = document.querySelector(".btnSubmitPost")
+
+        buttonPost.addEventListener("click", async (event) => {
+            event.preventDefault()
+
+            const data = {
+                content: inputPost.value
+            }
+
+            await ApiRequest.novoPost(data)
+            const listaPost = await ApiRequest.homePage()
+            Postagens.listarPosts(listaPost)
+        })
+    }
 }
 const listaPost = await ApiRequest.homePage()
-const data = listaPost.data
-Postagens.listarPosts(data)
-
-/** <li>
-        <div>
-            <img src="../assets/image 4.png" alt="">
-            <h2>Gatinho Fofo</h2>
-        </div>
-        <p class="postagem">Lorem ipsum dolor sit amet. Et iste labore ut similique consequuntur et consequuntur harum est repellendus quia 33 tempore similique. Nam reprehenderit vero eos maxime consequatur At nihil facere vel quam nemo eum perspiciatis maiores qui atque quia. 
-        </p>
-        <p class="data">22/08/2022</p>
-        <div class="container__botoes">
-            <button class="editar"><img src="../assets/edit 1.svg" alt=""></button>
-            <button class="delete"><img src="../assets/trash-bin 1.svg" alt=""></button>
-        </div>
-    </li> */
+Postagens.listarPosts(listaPost)
+Postagens.newPost()
