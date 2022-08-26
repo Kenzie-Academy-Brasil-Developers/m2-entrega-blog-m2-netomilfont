@@ -17,7 +17,16 @@ export class Modal {
 
     }
     static async fecharModal() {
-        
+        const btnEnviar = document.querySelector(".modalBtn")
+        const modal = document.querySelector(".modal")
+
+        btnEnviar.addEventListener("click", (event) => {
+            event.preventDefault()
+
+            modal.classList.toggle("hidden")
+            
+        })
+
 
     }
     static async modalEdit() {
