@@ -14,6 +14,8 @@
     --roxoEscuro: #363457;
     --branco: #ECF0F1;
     --preto: #030000;
+    --transparente: #00000080;
+    --vermelho: #FF3F5B;
 }
 
 header {
@@ -113,7 +115,7 @@ main > section > ul {
 
 main > section > ul > li {
     display: flex;
-    gap: 10px;
+    gap: 18px;
     padding: 8px 0;
     width: 100%;
     flex-direction: column;
@@ -132,6 +134,7 @@ main > section > ul > li > div {
 
 main > section > ul > li > div > img {
     width: 5rem;
+    border-radius: 50%;
 }
 
 main > section > ul > li > div > h2 {
@@ -141,7 +144,7 @@ main > section > ul > li > div > h2 {
 main > section > ul > li .postagem {
     font-size: 0.8rem;
     width: 86%;
-    text-align: start;
+    text-align: center;
 }
 
 main > section > ul > li .data {
@@ -161,7 +164,73 @@ main > section > ul > li .data {
     width: 2.5rem;
 }
 
+.modal {
+    background-color: var(--transparente);
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal form {
+    background-color: var(--azul);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.modal form h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: -1px -1px 0px var(--preto),
+    -1px 1px 0px var(--preto),
+     1px -1px 0px var(--preto),
+     1px 0px 0px var(--preto);
+}
+
+.modal form textarea {
+    height: 6rem;
+    border-radius: 10px;
+    border: 1px solid var(--preto);
+    padding: 9px 7px;
+    width: 90%;
+}
+
+.modal form button {
+    padding: 6px 24px;
+    font-size: 0.8rem;
+    border-radius: 16px;
+    border: none;
+    background-color: var(--roxoClaro);
+    color: #ffffff;
+    font-weight: 500;   
+}
+
+#modal__delete form h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: -1px -1px 0px var(--preto), -1px 1px 0px var(--preto), 1px -1px 0px var(--preto), 1px 0px 0px var(--preto);
+}
+
+#modal__delete form button{
+    background-color: var(--vermelho);
+}
+
 @media (min-width: 1024px) {
+    button {
+        cursor: pointer;
+    }
+
     header > div {
         width: 80%;
     }
@@ -177,5 +246,24 @@ main > section > ul > li .data {
     main > section > ul > li {
         flex-direction: row;
         min-height: 12rem;
+    }
+
+    main > section > ul > li {
+        gap: 55px;
+        padding: 8px 25px;
+        justify-content: space-between;
+    }
+
+    main > section > ul > li .postagem {
+        width: 86%;
+        text-align: start;
+    }
+
+    .container__botoes {
+        flex-direction: column;
+    }
+
+    .modal form {
+        width: 32%;
     }
 }
