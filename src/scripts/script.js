@@ -69,7 +69,14 @@ export class ApiRequest {
 
     }
 
-    static async deletePost() {
+    static async deletePost(id) {
+        const deletePost = await fetch(`${ApiRequest.BASEURL}/posts/${id}`, {
+            method:"DELETE",
+            headers: this.headers
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
 
+        return deletePost
     }
 }
