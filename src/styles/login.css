@@ -26,7 +26,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--ocean-blue);
-    margin-top: 69px;
+    margin: 69px 0;
     padding: 17px;
     border-radius: 10px;
     width: 70%;

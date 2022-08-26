@@ -63,6 +63,7 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: var(--roxoEscuro);
+    padding-bottom: 30px;
 }
 
 main > form {
@@ -107,6 +108,7 @@ main > section > ul {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 35px;
 }
 
 main > section > ul > li {
