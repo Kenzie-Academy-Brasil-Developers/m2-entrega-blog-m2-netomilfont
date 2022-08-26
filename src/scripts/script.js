@@ -40,7 +40,14 @@ export class ApiRequest {
     }
 
     static async homePage() {
+        const postagens = await fetch(`${ApiRequest.BASEURL}/posts?page=1`, {
+            method: "GET",
+            headers: ApiRequest.headers,
+        })
+        .then(resp => resp.json())
+        .catch(err => console.log(err))
 
+        return postagens
     }
 
     static async novoPost() {
