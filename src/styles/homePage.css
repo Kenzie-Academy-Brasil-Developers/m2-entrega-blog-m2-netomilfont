@@ -111,6 +111,8 @@ main > section > ul {
     display: flex;
     flex-direction: column;
     gap: 35px;
+    justify-content: center;
+    align-items: center;
 }
 
 main > section > ul > li {
@@ -238,14 +240,19 @@ main > section > ul > li .data {
     main > form > div {
         width: 60%;
     }
-    
-    main > section > ul {
+
+    main > section {
         width: 55%;
+    }
+
+    main > section > ul {
+        width: 100%;
     }
 
     main > section > ul > li {
         flex-direction: row;
         min-height: 12rem;
+        width: 98%;
     }
 
     main > section > ul > li {
