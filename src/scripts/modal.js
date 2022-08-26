@@ -15,7 +15,7 @@ export class Modal {
     }
     static async fecharModal() {
         const btnEnviar = document.querySelector(".modalBtn")
-        const modal = document.querySelector(".modal")
+        const modal = document.querySelector("#modal__edit")
 
         btnEnviar.addEventListener("click", (event) => {
             event.preventDefault()
@@ -32,7 +32,7 @@ export class Modal {
         
 
         ul.addEventListener("click", (event)=> {
-            console.log(event.target)
+            
             if(event.target.tagName == "INPUT" && event.target.classList == "btnDelete") {
                 
                 modal.classList.toggle("hidden")
@@ -42,6 +42,15 @@ export class Modal {
     }
 
     static async fecharDeleteModal() {
+        const btnEnviar = document.querySelector(".modalBtnDelete")
+        const modal = document.querySelector("#modal__delete")
+        
+        btnEnviar.addEventListener("click", (event) => {
+            event.preventDefault()
+
+            modal.classList.toggle("hidden")
+            
+        })
     }
 }
 
