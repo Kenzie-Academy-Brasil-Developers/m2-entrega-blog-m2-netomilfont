@@ -1,4 +1,5 @@
 import { ApiRequest } from "./script.js";
+import { Modal } from "./modal.js";
 
 export class Postagens {
     static listarPosts(arr) {
@@ -24,10 +25,8 @@ export class Postagens {
         const pPostagem = document.createElement("p")
         const pData = document.createElement("p")
         const divBotoes = document.createElement("div")
-        const buttonEditar = document.createElement("button")
-        const buttonDeletar = document.createElement("button")
-        const imgEditar = document.createElement("img")
-        const imgDeletar = document.createElement("img")
+        const buttonEditar = document.createElement("input")
+        const buttonDeletar = document.createElement("input")
 
         li.key = objPostagem.id
         li.id = objPostagem.id
@@ -35,21 +34,21 @@ export class Postagens {
         pPostagem.classList.add("postagem")
         pData.classList.add("data")
         divBotoes.classList.add("container__botoes")
-        buttonEditar.classList.add("editar")
-        buttonDeletar.classList.add("delete")
+        buttonEditar.classList.add("btnEdit")
+        buttonDeletar.classList.add("btnDelete")
 
         imgAvatar.src = objPostagem.user.avatarUrl
         imgAvatar.alt = "Avatar do Usuario"
         h2Usuario.innerText = objPostagem.user.username
         pPostagem.innerText = objPostagem.content
         pData.innerText = dataPostagem
-        imgEditar.src = "../assets/edit 1.svg"
-        imgEditar.alt = "editar"
-        imgDeletar.src = "../assets/trash-bin 1.svg"
-        imgDeletar.alt = "deletar"
+        buttonEditar.src = "../assets/edit 1.svg"
+        buttonEditar.type = "image"
+        buttonEditar.alt = "editar"
+        buttonDeletar.src = "../assets/trash-bin 1.svg"
+        buttonDeletar.type = "image"
+        buttonDeletar.alt = "deletar"
 
-        buttonEditar.append(imgEditar)
-        buttonDeletar.append(imgDeletar)
         divBotoes.append(buttonEditar,buttonDeletar)
 
         divAvatar.append(imgAvatar, h2Usuario)
@@ -85,3 +84,7 @@ export class Postagens {
 const listaPost = await ApiRequest.homePage()
 Postagens.listarPosts(listaPost)
 Postagens.newPost()
+Modal.mostraModal()
+Modal.fecharModal()
+Modal.mostrarDeleteModal()
+Modal.fecharDeleteModal()

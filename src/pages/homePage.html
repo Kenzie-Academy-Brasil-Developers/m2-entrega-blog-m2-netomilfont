@@ -39,27 +39,29 @@
                         </p>
                         <p class="data">22/08/2022</p>
                         <div class="container__botoes">
-                            <button class="editar"><img src="../assets/edit 1.svg" alt=""></button>
-                            <button class="delete"><img src="../assets/trash-bin 1.svg" alt=""></button>
+                            <!-- <button class="editar btnEdit"><img src="../assets/edit 1.svg" alt=""></button>
+                            <button class="delete btnEdit"><img src="../assets/trash-bin 1.svg" alt=""></button> -->
+                            <input class="btnEdit" type="image" src="../assets/edit 1.svg" alt="">
+                            <input class="btnDelete" type="image" src="../assets/trash-bin 1.svg" alt="">
                         </div>
                 </li>
             </ul>
         </section>
 
-        <!-- <section id="modal__edit" class="modal hidden">
+        <section id="modal__edit" class="modal hidden">
             <form action="submit">
                 <h2>Editar</h2>
                 <textarea placeholder="Digite novo post"></textarea>
-                <button type="submit">Enviar</button>
+                <button class="modalBtn" type="submit">Enviar</button>
             </form>
         </section>
 
         <section id="modal__delete" class="modal hidden">
             <form action="submit">
                 <h2>Deseja deletar esse Post?</h2>
-                <button type="submit">Deletar</button>
+                <button class="modalBtnDelete" type="submit">Deletar</button>
             </form>
-        </section> -->
+        </section>
     </main>
     <script type="module" src="../scripts/homePage.js"></script>
 </body>
