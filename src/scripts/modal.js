@@ -1,11 +1,8 @@
 export class Modal {
     static mostraModal() {
-        const modalBtn = document.querySelectorAll(".btnEdit")
-        const modal = document.querySelector(".modal")
+        const modal = document.querySelector("#modal__edit")
         const ul = document.querySelector("ul")
             
-        console.log(modalBtn)
-
         ul.addEventListener("click", (event)=> {
             
             if(event.target.tagName == "INPUT" && event.target.classList == "btnEdit") {
@@ -27,11 +24,24 @@ export class Modal {
             
         })
 
+    }
 
+    static async mostrarDeleteModal() {
+        const modal = document.querySelector("#modal__delete")
+        const ul = document.querySelector("ul")
+        
+
+        ul.addEventListener("click", (event)=> {
+            console.log(event.target)
+            if(event.target.tagName == "INPUT" && event.target.classList == "btnDelete") {
+                
+                modal.classList.toggle("hidden")
+            }
+            
+        })
     }
-    static async modalEdit() {
-    }
-    static async modalDelete() {
+
+    static async fecharDeleteModal() {
     }
 }
 
