@@ -159,7 +159,7 @@ main > section > ul > li .data {
     width: 35%;
 }
 
-.container__botoes > button {
+.container__botoes > input {
     border: none;
     width: 2.5rem;
 }
@@ -266,4 +266,8 @@ main > section > ul > li .data {
     .modal form {
         width: 32%;
     }
+}
+
+.hidden {
+    display: none;
 }
