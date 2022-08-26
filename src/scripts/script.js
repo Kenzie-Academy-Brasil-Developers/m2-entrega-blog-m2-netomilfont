@@ -51,7 +51,15 @@ export class ApiRequest {
     }
 
     static async novoPost() {
+        const newPost = await fetch(`${ApiRequest.BASEURL}/posts`, {
+            method: "POST",
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
 
+        return newPost
     }
 
     static async editarPost() {
