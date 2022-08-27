@@ -89,4 +89,15 @@ export class ApiRequest {
 
         return deletePost
     }
+
+    static async infoUsuarioLogin(id) {
+        const infoUsuario = await fetch(`${ApiRequest.BASEURL}/users/${id}`, {
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+
+        return infoUsuario
+    }
 }
