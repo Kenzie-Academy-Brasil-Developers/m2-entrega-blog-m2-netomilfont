@@ -1,4 +1,4 @@
-import { ApiRequest } from "./script.js"
+import { ApiRequest } from "./requestApi.js"
 
 class CadastrarUsuario {
     static async novoUsuario() {

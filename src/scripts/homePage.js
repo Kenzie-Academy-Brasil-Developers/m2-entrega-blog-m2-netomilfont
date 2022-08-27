@@ -1,4 +1,4 @@
-import { ApiRequest } from "./script.js";
+import { ApiRequest } from "./requestApi.js";
 import { Modal } from "./modal.js";
 
 export class Postagens {

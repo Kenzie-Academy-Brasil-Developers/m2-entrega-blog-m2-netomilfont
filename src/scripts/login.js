@@ -1,12 +1,8 @@
-import { ApiRequest } from "./script.js"
+import { ApiRequest } from "./requestApi.js"
 
 class LoginPage {
     static renderLoginPage() {
         const token = localStorage.getItem("@kenzieBlog:token")
-
-        if(token) {
-            window.location.assign("src/pages/homePage.html")
-        }
 
         const emailInput = document.getElementById("inputEmail")
         const passwordInput = document.getElementById("inputPass")
