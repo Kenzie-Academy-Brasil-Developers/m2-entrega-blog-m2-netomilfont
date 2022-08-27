@@ -119,7 +119,7 @@ main > section > ul > li {
     display: flex;
     gap: 18px;
     padding: 8px 0;
-    width: 23rem;
+    width: 18rem;
     flex-direction: column;
     align-items: center;
     background-color: var(--branco);
