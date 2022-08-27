@@ -6,7 +6,7 @@ export class Modal {
         ul.addEventListener("click", (event)=> {
             
             if(event.target.tagName == "INPUT" && event.target.classList == "btnEdit") {
-                
+                localStorage.setItem("@kenzieBlog:postId", event.target.closest("li").id)
                 modal.classList.toggle("hidden")
             }
             
