@@ -126,6 +126,16 @@ export class Postagens {
         })
     }
 
+    static logout() {
+        const btnLogout = document.querySelector("button")
+        console.log(btnLogout)
+        btnLogout.addEventListener("click", () => {
+            localStorage.removeItem("@kenzieBlog:token")
+            localStorage.removeItem("@kenzieBlog:userId")
+            
+            window.location.assign("../../index.html")
+        })
+    }
 }
 const listaPost = await ApiRequest.homePage()
 Postagens.listarPosts(listaPost)
@@ -136,4 +146,5 @@ Modal.mostrarDeleteModal()
 Modal.fecharDeleteModal()
 Postagens.deletePostagem()
 Postagens.editar()
+Postagens.logout()
 
