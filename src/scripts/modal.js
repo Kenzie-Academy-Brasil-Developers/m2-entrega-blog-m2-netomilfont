@@ -35,6 +35,7 @@ export class Modal {
             
             if(event.target.tagName == "INPUT" && event.target.classList == "btnDelete") {
                 
+                localStorage.setItem("@kenzieBlog:postId", event.target.id)
                 modal.classList.toggle("hidden")
             }
             

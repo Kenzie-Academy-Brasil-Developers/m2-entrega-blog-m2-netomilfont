@@ -3,6 +3,7 @@ import { Modal } from "./modal.js";
 
 export class Postagens {
     static listarPosts(arr) {
+
         const ul = document.querySelector("ul")
         const data = arr.data
 
@@ -30,6 +31,7 @@ export class Postagens {
 
         li.key = objPostagem.id
         li.id = objPostagem.id
+        buttonDeletar.id = objPostagem.id
 
         pPostagem.classList.add("postagem")
         pData.classList.add("data")
@@ -62,6 +64,14 @@ export class Postagens {
         return li
     }
 
+    static renderDash(posts) {
+        const token = localStorage.getItem("@kenzieBlog:token")
+        const postList = document.querySelector("ul")
+
+        postList.innerText = ""
+
+        Postagens.listarPosts(posts)
+    }
 
     static newPost () {
 
@@ -78,6 +88,23 @@ export class Postagens {
             await ApiRequest.novoPost(data)
             const listaPost = await ApiRequest.homePage()
             Postagens.listarPosts(listaPost)
+        })
+    }
+
+    static deletePostagem() {
+        const deleteBtn = document.querySelector(".modalBtnDelete")
+        const modal = document.querySelector("#modal__delete")
+    
+        deleteBtn.addEventListener("click", async (event) => {
+            event.preventDefault()
+            
+            const postId = localStorage.getItem("@kenzieBlog:postId")
+            await ApiRequest.deletePost(postId)
+            localStorage.removeItem("@kenzieBlog:postId")
+    
+            const posts = await ApiRequest.homePage()
+            Postagens.renderDash(posts)
+            
         })
     }
 
@@ -98,6 +125,7 @@ export class Postagens {
             window.location.assign("./homePage.html")
         })
     }
+
 }
 const listaPost = await ApiRequest.homePage()
 Postagens.listarPosts(listaPost)
@@ -106,4 +134,6 @@ Modal.mostraModal()
 Modal.fecharModal()
 Modal.mostrarDeleteModal()
 Modal.fecharDeleteModal()
+Postagens.deletePostagem()
 Postagens.editar()
+
