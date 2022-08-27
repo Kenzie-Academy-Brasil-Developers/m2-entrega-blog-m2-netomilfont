@@ -39,6 +39,7 @@ header > div > div{
 
 header > div > div > img {
     width: 4rem;
+    border-radius: 50%;
 }
 
 header > div > div > h2 {
@@ -83,15 +84,19 @@ main > form > div {
     align-items: flex-end;
 }
 
-main > form > div > input {
+main > form > div > textarea {
     width: 100%;
     height: 5rem;
     border-radius: 16px;
-    padding: 0 10px;
+    padding: 10px;
     font-size: 1.2rem;
     background-color: var(--branco);
     color: var(--roxo);
     border: none;
+}
+
+main > form > div > textarea:focus {
+    outline: 0;
 }
 
 main > form > div > button {
@@ -106,7 +111,7 @@ main > form > div > button {
 }
 
 main > section > ul {
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -119,7 +124,7 @@ main > section > ul > li {
     display: flex;
     gap: 18px;
     padding: 8px 0;
-    width: 18rem;
+    width: 90%;
     flex-direction: column;
     align-items: center;
     background-color: var(--branco);
@@ -147,6 +152,9 @@ main > section > ul > li .postagem {
     font-size: 0.8rem;
     width: 86%;
     text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 main > section > ul > li .data {
@@ -239,6 +247,15 @@ main > section > ul > li .data {
 
     main > form > div {
         width: 60%;
+    }
+
+    main > form > div > button {
+        color: var(--roxoClaro);
+    }
+
+    main > form > div > button::after {
+        content: "Postar";
+        color: #fff;
     }
 
     main > section {

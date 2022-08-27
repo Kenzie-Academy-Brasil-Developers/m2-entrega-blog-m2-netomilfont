@@ -128,13 +128,27 @@ export class Postagens {
 
     static logout() {
         const btnLogout = document.querySelector("button")
-        console.log(btnLogout)
         btnLogout.addEventListener("click", () => {
             localStorage.removeItem("@kenzieBlog:token")
             localStorage.removeItem("@kenzieBlog:userId")
             
             window.location.assign("../../index.html")
         })
+    }
+
+    static async domInfoUsuario() {
+        const divUsuario = document.querySelector(".infoUsuario")
+        const idUsuario = localStorage.getItem("@kenzieBlog:userId")
+        const infoUsuario = await ApiRequest.infoUsuarioLogin(idUsuario)
+
+        const avatarUsuario = document.createElement("img")
+        const apelidoUsuario = document.createElement("h2")
+
+        avatarUsuario.src = infoUsuario.avatarUrl
+        avatarUsuario.alt = `Avatar do usuario`
+        apelidoUsuario.innerText = infoUsuario.username
+
+        divUsuario.append(avatarUsuario, apelidoUsuario)
     }
 }
 const listaPost = await ApiRequest.homePage()
@@ -147,4 +161,5 @@ Modal.fecharDeleteModal()
 Postagens.deletePostagem()
 Postagens.editar()
 Postagens.logout()
+Postagens.domInfoUsuario()
 
