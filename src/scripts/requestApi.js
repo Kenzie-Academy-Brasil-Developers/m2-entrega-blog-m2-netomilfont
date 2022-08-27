@@ -34,7 +34,6 @@ export class ApiRequest {
         })
         .then(res => {
             window.location.assign("./index.html")
-            console.log(res.json())
             return res.json()
             })
         .catch(err => console.log(err))
