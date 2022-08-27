@@ -32,6 +32,7 @@ export class ApiRequest {
         })
         .then(res => {
             window.location.assign("./index.html")
+            console.log(res.json())
             return res.json()
             })
         .catch(err => console.log(err))
@@ -65,8 +66,16 @@ export class ApiRequest {
         return newPost
     }
 
-    static async editarPost() {
+    static async editarPost(body, id) {
+        const editar = await fetch(`${ApiRequest.BASEURL}/posts/${id}`, {
+            method: "PATCH",
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
 
+        return editar
     }
 
     static async deletePost(id) {

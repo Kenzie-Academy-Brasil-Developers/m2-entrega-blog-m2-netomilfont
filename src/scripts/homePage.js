@@ -73,7 +73,6 @@ export class Postagens {
         Postagens.listarPosts(posts)
     }
 
-
     static newPost () {
 
         const inputPost = document.querySelector(".inputPostagem")
@@ -85,7 +84,6 @@ export class Postagens {
             const data = {
                 content: inputPost.value
             }
-
 
             await ApiRequest.novoPost(data)
             const listaPost = await ApiRequest.homePage()
@@ -110,6 +108,24 @@ export class Postagens {
         })
     }
 
+    static async editar() {
+        const btnEditar = document.querySelector(".modalBtn")
+        const inputTexto = document.querySelector(".TextoEditar")
+
+        btnEditar.addEventListener("click", async (event) => {
+            event.preventDefault()
+            const idPost = localStorage.getItem("@kenzieBlog:postId")
+            
+            const data = {
+                content: inputTexto.value,
+            }
+            
+            await ApiRequest.editarPost(data, idPost)
+            localStorage.removeItem("@kenzieBlog:postId")
+            window.location.assign("./homePage.html")
+        })
+    }
+
 }
 const listaPost = await ApiRequest.homePage()
 Postagens.listarPosts(listaPost)
@@ -119,3 +135,5 @@ Modal.fecharModal()
 Modal.mostrarDeleteModal()
 Modal.fecharDeleteModal()
 Postagens.deletePostagem()
+Postagens.editar()
+
