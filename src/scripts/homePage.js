@@ -52,9 +52,7 @@ export class Postagens {
         buttonDeletar.alt = "deletar"
 
         divBotoes.append(buttonEditar,buttonDeletar)
-
         divAvatar.append(imgAvatar, h2Usuario)
-
         li.append(divAvatar, pPostagem, pData)
 
         if(objPostagem.user.id == userId) {
@@ -151,6 +149,7 @@ export class Postagens {
         divUsuario.append(avatarUsuario, apelidoUsuario)
     }
 }
+
 const listaPost = await ApiRequest.homePage()
 Postagens.listarPosts(listaPost)
 Postagens.newPost()
@@ -162,4 +161,3 @@ Postagens.deletePostagem()
 Postagens.editar()
 Postagens.logout()
 Postagens.domInfoUsuario()
-

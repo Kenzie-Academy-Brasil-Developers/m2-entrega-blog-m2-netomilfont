@@ -29,7 +29,7 @@ export class ApiRequest {
     static async cadastro(data) {
         const cadUsuario = await fetch(`${ApiRequest.BASEURL}/users/register`, {
             method: "POST",
-            headers: ApiRequest.headers,
+            headers: this.headers,
             body: JSON.stringify(data) 
         })
         .then(res => {
@@ -44,7 +44,7 @@ export class ApiRequest {
     static async homePage() {
         const postagens = await fetch(`${ApiRequest.BASEURL}/posts?page=1`, {
             method: "GET",
-            headers: ApiRequest.headers,
+            headers: this.headers,
         })
         .then(resp => resp.json())
         .catch(err => console.log(err))

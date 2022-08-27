@@ -3,7 +3,6 @@ import { ApiRequest } from "./requestApi.js"
 class LoginPage {
     static renderLoginPage() {
         const token = localStorage.getItem("@kenzieBlog:token")
-
         const emailInput = document.getElementById("inputEmail")
         const passwordInput = document.getElementById("inputPass")
         const btnLogin = document.getElementById("btnLogin")
@@ -19,7 +18,6 @@ class LoginPage {
             ApiRequest.login(data)
         })
     }
-
 
 }
 

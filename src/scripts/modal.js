@@ -13,6 +13,7 @@ export class Modal {
         })
 
     }
+
     static async fecharModal() {
         const btnEnviar = document.querySelector(".modalBtn")
         const modal = document.querySelector("#modal__edit")
@@ -30,7 +31,6 @@ export class Modal {
         const modal = document.querySelector("#modal__delete")
         const ul = document.querySelector("ul")
         
-
         ul.addEventListener("click", (event)=> {
             
             if(event.target.tagName == "INPUT" && event.target.classList == "btnDelete") {
