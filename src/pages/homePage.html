@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/homePage.css">
+    <title>Home Page - Blog</title>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="infoUsuario"></div>
+            <button>Logout</button>
+        </div>
+    </header>
+    <main class="container__main">
+        <form>
+            <div class="container__input">
+                <textarea  class="inputPostagem" placeholder="No que está pensando?"></textarea>
+                <button class="btnSubmitPost">+</button>
+            </div>
+        </form>
+        <section>
+            <ul></ul>
+        </section>
+
+        <section id="modal__edit" class="modal hidden">
+            <form action="submit">
+                <h2>Editar</h2>
+                <textarea class="TextoEditar" placeholder="Digite novo post"></textarea>
+                <button class="modalBtn" type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="modal__delete" class="modal hidden">
+            <form action="submit">
+                <h2>Deseja deletar esse Post?</h2>
+                <button class="modalBtnDelete" type="submit">Deletar</button>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="../scripts/homePage.js"></script>
+</body>
+</html>

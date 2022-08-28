@@ -1,0 +1,297 @@
+*{
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul: #6495ED;
+    --roxoClaro: #5C5D8D;
+    --roxo: #454D6B;
+    --roxoEscuro: #363457;
+    --branco: #ECF0F1;
+    --preto: #030000;
+    --transparente: #00000080;
+    --vermelho: #FF3F5B;
+}
+
+header {
+    background-color: var(--azul);
+    font-family: 'Inter', sans-serif;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    width: 90%;
+    padding: 6px 0;
+}
+
+header > div > div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header > div > div > img {
+    width: 4rem;
+    border-radius: 50%;
+}
+
+header > div > div > h2 {
+    font-size: 1.2rem;
+    text-shadow: -1px -1px 0px var(--preto),
+                 -1px 1px 0px var(--preto),
+                  1px -1px 0px var(--preto),
+                  1px 0px 0px var(--preto);
+    color: #fff;
+}
+
+header > div > button {
+    padding: 5px 24px;
+    font-size: 0.9rem;
+    border-radius: 16px;
+    border: none;
+    background-color: var(--roxoClaro);
+    color: #ffffff;
+    font-weight: 500;   
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--roxoEscuro);
+    padding-bottom: 30px;
+}
+
+main > form {
+    width: 90%;
+    display: flex;
+}
+
+main > form > div {
+    width: 100%;
+    margin: 30px auto 50px;
+    background-color: var(--branco);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main > form > div > textarea {
+    width: 100%;
+    height: 5rem;
+    border-radius: 16px;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: var(--branco);
+    color: var(--roxo);
+    border: none;
+}
+
+main > form > div > textarea:focus {
+    outline: 0;
+}
+
+main > form > div > button {
+    padding: 3px 20px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    border: none;
+    background-color: var(--roxoClaro);
+    color: #fff;
+    margin: 10px;
+}
+
+main > section > ul {
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+main > section > ul > li {
+    display: flex;
+    gap: 18px;
+    padding: 8px 0;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--branco);
+    border-radius: 16px;
+    text-align: center;
+}
+
+main > section > ul > li > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+main > section > ul > li > div > img {
+    width: 5rem;
+    border-radius: 50%;
+}
+
+main > section > ul > li > div > h2 {
+    font-size: 1.2rem;
+}
+
+main > section > ul > li .postagem {
+    font-size: 0.8rem;
+    width: 86%;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+main > section > ul > li .data {
+    font-size: 0.8rem;
+}
+
+.container__botoes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.container__botoes > input {
+    border: none;
+    width: 2.5rem;
+}
+
+.modal {
+    background-color: var(--transparente);
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal form {
+    background-color: var(--azul);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.modal form h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: -1px -1px 0px var(--preto),
+    -1px 1px 0px var(--preto),
+     1px -1px 0px var(--preto),
+     1px 0px 0px var(--preto);
+}
+
+.modal form textarea {
+    height: 6rem;
+    border-radius: 10px;
+    border: 1px solid var(--preto);
+    padding: 9px 7px;
+    width: 90%;
+}
+
+.modal form button {
+    padding: 6px 24px;
+    font-size: 0.8rem;
+    border-radius: 16px;
+    border: none;
+    background-color: var(--roxoClaro);
+    color: #ffffff;
+    font-weight: 500;   
+}
+
+#modal__delete form h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: -1px -1px 0px var(--preto), -1px 1px 0px var(--preto), 1px -1px 0px var(--preto), 1px 0px 0px var(--preto);
+}
+
+#modal__delete form button{
+    background-color: var(--vermelho);
+}
+
+@media (min-width: 1024px) {
+    button {
+        cursor: pointer;
+    }
+
+    header > div {
+        width: 80%;
+    }
+
+    main > form > div {
+        width: 60%;
+    }
+
+    main > form > div > button {
+        color: var(--roxoClaro);
+    }
+
+    main > form > div > button::after {
+        content: "Postar";
+        color: #fff;
+    }
+
+    main > section {
+        width: 55%;
+    }
+
+    main > section > ul {
+        width: 100%;
+    }
+
+    main > section > ul > li {
+        flex-direction: row;
+        min-height: 12rem;
+        width: 98%;
+    }
+
+    main > section > ul > li {
+        gap: 55px;
+        padding: 8px 25px;
+        justify-content: space-between;
+    }
+
+    main > section > ul > li .postagem {
+        width: 86%;
+        text-align: start;
+    }
+
+    .container__botoes {
+        flex-direction: column;
+    }
+
+    .modal form {
+        width: 32%;
+    }
+}
+
+.hidden {
+    display: none;
+}
